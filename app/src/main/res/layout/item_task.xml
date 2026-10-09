@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardBackgroundColor="@color/card_bg"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- Top Badges & Actions Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Category Badge -->
+            <TextView
+                android:id="@+id/tvTaskCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="Work 💼"
+                android:textColor="@color/cat_work"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Priority Badge -->
+            <TextView
+                android:id="@+id/tvTaskPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_priority_high"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="🔴 High"
+                android:textColor="@color/priority_high"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <!-- Status Badge -->
+            <TextView
+                android:id="@+id/tvTaskStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_badge"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="In Progress"
+                android:textColor="@color/status_in_progress"
+                android:textSize="11sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Edit Button -->
+            <ImageButton
+                android:id="@+id/btnEditTask"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Edit Task"
+                android:padding="6dp"
+                android:src="@drawable/ic_edit" />
+
+            <!-- Delete Button -->
+            <ImageButton
+                android:id="@+id/btnDeleteTask"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Delete Task"
+                android:padding="6dp"
+                android:src="@drawable/ic_delete" />
+        </LinearLayout>
+
+        <!-- Main Task Title & Toggle Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:orientation="horizontal">
+
+            <!-- Checkbox Toggle -->
+            <ImageView
+                android:id="@+id/ivCheckToggle"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Toggle Completion"
+                android:src="@drawable/ic_check_circle_outline" />
+
+            <!-- Title & Description -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTaskTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Finalize Quarterly Sprint Backlog"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTaskDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="Review user stories and allocate story points for team sprint."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Due Date Footer Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivCalendarIcon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_calendar" />
+
+            <TextView
+                android:id="@+id/tvDueDateBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Due Today, 5:00 PM"
+                android:textColor="@color/due_today_amber"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Created relative time -->
+            <TextView
+                android:id="@+id/tvCreatedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Created 2d ago"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
